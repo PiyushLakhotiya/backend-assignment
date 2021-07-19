@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 const PORT = process.env.PORT || 3000;
-const CONNECTION_URL = process.env.CONNECTION_URL;
+const CONNECTION_URL = process.env.CONNECTION_URL || 'mongodb+srv://yelpcamp:kingmaker@wryth.y07gq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose.connect(CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
     .then(() => app.listen(PORT, () => console.log(`Server Started at Port: ${PORT}`)))
